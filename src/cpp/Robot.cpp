@@ -10,9 +10,20 @@ int add(int a, int b) {
 
 class Robot: public IterativeRobot {
 public:
+   Talon *left_motor;//create pointer
+   Talon *right_motor;
+   RobotDrive *my_robot;
+   joystick *joystick(int 5, numAxisTypes, numButtonTypes;
+   int left_motor_port = 1, right_motor_port = 2;
+
     Robot() { }
 
-    void RobotInit() { }
+    void RobotInit() {
+      left_motor = new Talon(left_motor_port);//use constructor
+      right_motor = new Talon(right_motor_port);//use constructor
+      my_robot = new RobotDrive(left_motor, right_motor);
+      joystick = new joystick(left_motor, right_motor);
+    }
 
     void DisabledInit() { }
     void AutonomousInit() { }
@@ -22,7 +33,9 @@ public:
     void DisabledPeriodic() { }
     void AutonomousPeriodic() { }
     void TeleopPeriodic() { }
-    void TestPeriodic() { }
+    void TestPeriodic() {
+    my_robot->TankDrive(0.5,0.5);//telling the robot to move forwards
+     }
 };
 
 START_ROBOT_CLASS(Robot)
