@@ -13,8 +13,8 @@ public:
    Talon *left_motor;//create pointer
    Talon *right_motor;
    RobotDrive *my_robot;
-   joystick *joystick(int 5, numAxisTypes, numButtonTypes;
-   int left_motor_port = 1, right_motor_port = 2;
+   joystick *joystick(int 3, numAxisTypes, numButtonTypes;
+   int left_motor_port = 1, right_motor_port = 2, joystick = 3;
 
     Robot() { }
 
