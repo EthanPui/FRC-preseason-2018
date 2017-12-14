@@ -13,16 +13,16 @@ public:
    Talon *left_motor;//create pointer
    Talon *right_motor;
    RobotDrive *my_robot;
-   joystick *joystick(int 3, numAxisTypes, numButtonTypes;
+   joystick *driveStick;
    int left_motor_port = 1, right_motor_port = 2, joystick = 3;
 
     Robot() { }
 
     void RobotInit() {
       left_motor = new Talon(left_motor_port);//use constructor
-      right_motor = new Talon(right_motor_port);//use constructor
-      my_robot = new RobotDrive(left_motor, right_motor);
-      joystick = new joystick(left_motor, right_motor);
+     right_motor = new Talon(right_motor_port);//use constructor
+        my_robot = new RobotDrive(left_motor, right_motor);
+      driveStick = new joystick(driveStick);
     }
 
     void DisabledInit() { }
