@@ -22,7 +22,7 @@ public:
       left_motor = new Talon(left_motor_port);//use constructor
      right_motor = new Talon(right_motor_port);//use constructor
         my_robot = new RobotDrive(left_motor, right_motor);
-      driveStick = new Joystick(driveStick);
+      driveStick = new Joystick(3);
     }
 
     void DisabledInit() { }
